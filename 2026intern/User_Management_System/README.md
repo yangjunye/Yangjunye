@@ -1,54 +1,46 @@
-# 用户管理系统 API
+# User Management System
 
-基于 Spring Boot + MySQL + JdbcTemplate 实现的 RESTful 用户管理系统。
+A simple RESTful API for managing users, built with **Spring Boot** and **MySQL**.  
+This project demonstrates basic CRUD operations, REST API design, and database interaction using **JdbcTemplate**.
 
----
+## ✨ Features
 
-## 📋 项目信息
+- ✅ Create a new user
+- ✅ Retrieve user by ID
+- ✅ Retrieve all users
+- ✅ Update user information
+- ✅ Delete user
+- ✅ Parameter validation (email format, etc.)
+- ✅ Pagination support
+- ✅ Fuzzy search by username
 
-| 项目 | 说明 |
-|------|------|
-| 框架 | Spring Boot 4.0.2 |
-| JDK | 21 |
-| 数据库 | MySQL 8.0+ |
-| 数据访问 | JdbcTemplate |
-| 构建工具 | Maven |
+## 🛠️ Tech Stack
 
----
+- Java 21
+- Spring Boot 4.0.2
+- MySQL 8.0
+- JdbcTemplate
+- Maven
 
-## ✅ 已完成功能
+## 📁 API Endpoints
 
-### 核心接口（5个）
+| Method | Endpoint           | Description              |
+|--------|--------------------|--------------------------|
+| POST   | `/users`           | Create a new user        |
+| GET    | `/users`           | Get all users            |
+| GET    | `/users/{id}`      | Get user by ID           |
+| PUT    | `/users/{id}`      | Update user by ID        |
+| DELETE | `/users/{id}`      | Delete user by ID        |
+| GET    | `/users/page`      | Pagination query         |
+| GET    | `/users/search`    | Fuzzy search by username |
 
-| 方法 | URL | 功能 | 状态 |
-|------|-----|------|------|
-| GET | `/users` | 查询所有用户 | ✅ |
-| GET | `/users/{id}` | 根据ID查询用户 | ✅ |
-| POST | `/users` | 新增用户 | ✅ |
-| PUT | `/users/{id}` | 修改用户信息 | ✅ |
-| DELETE | `/users/{id}` | 删除用户 | ✅ |
+## 📊 Response Format
 
-### 扩展功能
+All endpoints return JSON in the following format:
 
-| 方法 | URL | 功能 | 状态 |
-|------|-----|------|------|
-| GET | `/users/page` | 分页查询 | ✅ |
-| GET | `/users/search` | 模糊搜索（用户名） | ✅ |
-
-
-
----
-
-
-### 1. 环境准备
-
-- JDK 21+
-- MySQL 8.0+
-- Maven 3.6+
-- IntelliJ IDEA（推荐）
-
-### 2. 导入项目
-
-```bash
-git clone [项目地址]
-# 或直接解压项目压缩包
+```json
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": { ... }
+}
