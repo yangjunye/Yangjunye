@@ -1,0 +1,40 @@
+### 查询所有用户
+GET http://localhost:8080/users
+
+### 查询ID=1的用户
+GET http://localhost:8080/users/1
+
+### 查询不存在的用户
+GET http://localhost:8080/users/999
+
+### 新增用户 - Tom
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "Tom",
+  "age": 22,
+  "email": "tom@example.com"
+}
+
+### 新增用户 - 测试用户名重复（应该失败）
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "Jack",
+  "age": 25,
+  "email": "jack@example.com"
+}
+
+### 修改用户 - 将Jack改为Jackie
+PUT http://localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "username": "Jackie",
+  "age": 26
+}
+
+### 删除用户 - 删除Tom
+DELETE http://localhost:8080/users/7
